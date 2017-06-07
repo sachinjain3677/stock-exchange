@@ -1,0 +1,5 @@
+INSTRUCTIONS:
+
+1) $ flask run
+2) $ phpliteadmin finance.db
+3) open link displayed from step 2 to access database

@@ -1,0 +1,33 @@
+<!--
+#   C$50 Finance
+#   Implement a website via which users can "buy" and "sell" stocks
+#
+#   Author:Julie Huang, julie@juliehuang.co.nz
+#  
+#   This file is an .html page extension of layout.html
+# 
+#   pset7 of CS50x
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('buy') }}" method="post">
+        <h5 class = "sub-header"> Enter Stock Code:</h5>
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock Code (e.g NFLX)" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Quantity" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Buy Stock</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

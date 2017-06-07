@@ -1,0 +1,23 @@
+<!--
+#   C$50 Finance
+#   Implement a website via which users can "buy" and "sell" stocks
+#
+#   Author:Julie Huang, julie@juliehuang.co.nz
+#  
+#   This file is an .html page extension of layout.html
+# 
+#   pset7 of CS50x
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Top Up
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('topup') }}" method="get">
+        <h5 class = "sub-header">Congratulations! Your top up of {{usd(top_up)}} was successful.</h5>
+        <h5 class = "sub-header">Your new balance is: {{usd(new_cash)}}.</h5>
+    </form>
+{% endblock %}

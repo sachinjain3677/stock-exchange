@@ -1,0 +1,49 @@
+<!--
+#   C$50 Finance
+#   Implement a website via which users can "buy" and "sell" stocks
+#
+#   Author:Julie Huang, julie@juliehuang.co.nz
+#  
+#   This file is an .html page extension of layout.html
+# 
+#   pset7 of CS50x
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('index') }}" method="get">
+        <fieldset>
+            <div>
+                <h5 class = "index-subheader"><br><b>Username:</b>&nbsp; {{username}}</br><br><b>Cash Balance:</b>&nbsp; {{cash_balance}}</br>
+                <br><b>Stock Balance:</b>&nbsp; {{stock_balance}}</br><br><b>TOTAL:</b>&nbsp; {{total_balance}}</br></h5>
+            </div>
+            <div class = "form-group">
+                <table align = "center">
+                    {% if sum(quantity) != 0 %}
+                    <tr bgcolor="#f7f7f7">
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Current Price p/s</th>
+                        <th>Current Value</th>
+                    </tr>
+                    {% endif %}
+                    {% for i in iterable_range if quantity[i] != 0 %}
+                    <tr>
+                        <td>{{symbol[i]["stock"]}}</td>
+                        <td>{{name[i]["name"]}}</td>
+                        <td>{{quantity[i]}}</td>
+                        <td>{{usd(currentprice[i]["price"])}}</td>
+                        <td>{{usd(currentvaluation[i])}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

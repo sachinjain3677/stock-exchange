@@ -1,0 +1,44 @@
+<!--
+#   C$50 Finance
+#   Implement a website via which users can "buy" and "sell" stocks
+#
+#   Author:Julie Huang, julie@juliehuang.co.nz
+#  
+#   This file is an .html page extension of layout.html
+# 
+#   pset7 of CS50x
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('quote') }}" method="post">
+        <h5 class = "sub-header">Quoted at: {{date}}</h5>
+        <fieldset>
+            <div class = "form-group">
+                <table align = "center">
+                    <tr bgcolor="#f7f7f7">
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Price p/s</th>
+                    </tr>
+                    <tr>
+                        <td>{{symbol}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                </table>
+            </div>
+        </fieldset>
+    </form>
+    <form action="{{ url_for('buy') }}" method="get">
+        <fieldset>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Buy Stock</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
