@@ -5,4 +5,4 @@ The following files are solutions for pset7 of CS50x, written in Python.
 
 ################################################
 
-Implement a website via which users can "buy" and "sell" stocks.
+finance/: Implement a website via which users can "buy" and "sell" stocks.
