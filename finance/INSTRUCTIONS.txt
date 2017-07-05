@@ -1,5 +1,13 @@
 INSTRUCTIONS:
 
+FROM BROWSER:
+1) Open link: http://ide50-public-julie-huang.cs50.io/
+2) click "Open the App"
+3) log in with following details (case sensitive): 
+   username: Julie Huang
+   password: g
+
+
+FROM PRIVATE IDE:
 1) $ flask run
 2) $ phpliteadmin finance.db
-3) open link displayed from step 2 to access database
