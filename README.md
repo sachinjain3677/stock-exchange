@@ -10,5 +10,7 @@ INSTRUCTIONS:
 1) Open link: http://ide50-public-julie-huang.cs50.io/
 2) click "Open the App"
 3) log in with following details (case sensitive): 
+
    username: Julie Huang
+   
    password: g
