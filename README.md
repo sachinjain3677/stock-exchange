@@ -1,4 +1,4 @@
-# CS50x_pset7
+# stock-exchange CS50x_pset7
 Author: Julie Huang, julie@juliehuang.co.nz
 
 The following files are solutions for pset7 of CS50x, written in Python.
