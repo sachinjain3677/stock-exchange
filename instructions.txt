@@ -1,0 +1,15 @@
+INSTRUCTIONS:
+
+1) In terminal 1 below:
+   $ flask run
+   
+1) In terminal 2 below:
+   $ phpliteadmin finance.db
+   
+3) CS50 IDE > Web Server (top left corner of menu bar)
+   This will open up a new tab with app
+   
+4) In app:
+   log in with following details (case sensitive): 
+   username: Julie Huang
+   password: g
