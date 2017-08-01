@@ -1,17 +1,17 @@
-'''
+'''_____________________________________________________________________________________________
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
 from passlib.apps import custom_app_context as pwd_context
 from tempfile import gettempdir
-'''
+_____________________________________________________________________________________________'''
 
 import datetime
 import time
 
 from helpers import *
 
-'''
+'''_____________________________________________________________________________________________
 # configure application
 app = Flask(__name__)
 
@@ -40,7 +40,7 @@ db = SQL("sqlite:///finance.db")
 @login_required
 def index():
     """ display summary of user's current stock holdings """
-    '''
+_____________________________________________________________________________________________'''
 
     # identify user
     user_id = session["user_id"]
@@ -103,7 +103,7 @@ def index():
     currentvaluation=current_valuation, currentprice=look_up, username=username, cash_balance=usd(cash_balance), \
     total_balance=usd(total_balance), stock_balance=usd(stock_balance), sum=sum, usd=usd)
 
-'''    
+'''_____________________________________________________________________________________________
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
@@ -117,7 +117,7 @@ def buy():
         
         # remember user logged in
         user_id = session["user_id"]
-'''
+  _____________________________________________________________________________________________'''
 
         # if no stock code provided, return re-prompt
         if not request.form.get("symbol"):
@@ -162,12 +162,12 @@ def buy():
             # purchase was successful, render summary page of transaction
             return render_template("bought.html", date=date, code=look_up["symbol"], name=look_up["name"], quantity=quantity, price=usd(look_up["price"]), total=usd(total_price))
 
-'''    
+'''_____________________________________________________________________________________________    
 @app.route("/history")
 @login_required
 def history():
     """Show history of transactions."""
-'''
+_____________________________________________________________________________________________'''
     
     # remember user logged in
     user_id = session["user_id"]
@@ -183,11 +183,11 @@ def history():
     # render history summary page, submitting variables to HTML
     return render_template("history.html", p_iterable_range=p_iterable_range, s_iterable_range=s_iterable_range, purchases=purchases, sales=sales, usd=usd)
 
-'''
+'''_____________________________________________________________________________________________
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in."""
-'''
+_____________________________________________________________________________________________'''
 
     # clear previous session
     session.clear()
@@ -219,7 +219,7 @@ def login():
     # if user reached route via GET, return login form
     else:
         return render_template("login.html")
-'''
+'''_____________________________________________________________________________________________
 @app.route("/logout")
 def logout():
     """Log user out."""
@@ -234,7 +234,7 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-'''
+_____________________________________________________________________________________________'''
     
     # if user reached route via GET, return "quote" page
     if request.method == "GET":
@@ -259,12 +259,12 @@ def quote():
         # render quote summary page, submitting variables to HTML
         look_up = lookup(symbol)
         return render_template("quoted.html", name =look_up["name"], symbol=look_up["symbol"], price=usd(look_up["price"]), date=date)
-'''
+'''_____________________________________________________________________________________________
 @app.route("/register", methods=["GET", "POST"])
 def register():
     
     """Register user."""
-'''
+_____________________________________________________________________________________________'''
     
     # forget previous session
     session.clear()
@@ -310,12 +310,12 @@ def register():
     # redirect user to index page
     return redirect(url_for("index"))
 
-'''        
+'''_____________________________________________________________________________________________      
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
     """Sell shares of stock."""
-'''
+_____________________________________________________________________________________________'''
     
     # identify user
     user_id = session["user_id"]
